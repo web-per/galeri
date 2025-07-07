@@ -4,24 +4,24 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Galeri Foto</title>
+    <title>Galeri - 170325</title>
     <link rel="stylesheet" href="video.css" />
 </head>
 
 <body>
 
     <header>
-        <h1>Galeri Video</h1>
-        <p>Kumpulan video kenangan terbaik</p>
+        <h1>Moments of Us</h1>
+        <p><i>♡ "Dua Manusia, Satu Cerita Gila" ♡</i></p>
     </header>
 
     <nav class="navbar">
         <ul>
-            <li><a href="index.html">Photo</a></li>
+            <li><a href="index.html">Foto</a></li>
             <li><a href="video.html">Video</a></li>
         </ul>
     </nav>
-
+    
     <section class="video-section">
         <div class="video-item">
             <video src="video/1.mp4" onclick="openLightboxVideo(this)"></video>
@@ -41,12 +41,12 @@
     </section>
 
     <div class="video-lightbox" id="videoLightbox" onclick="closeVideoLightbox()">
-    <span class="close">&times;</span>
-    <video id="lightboxVideo" controls autoplay></video>
-</div>
+        <span class="close">&times;</span>
+        <video id="lightboxVideo" controls autoplay></video>
+    </div>
 
     <footer>
-        <p>&copy; 2025 Galeri Foto - Irfan Nugraha</p>
+        <p>&copy; 2025 - Moments of Us ♡</p>
     </footer>
 </body>
 
@@ -54,23 +54,22 @@
 
 <script>
     function openLightboxVideo(videoElement) {
-    const lightbox = document.getElementById("videoLightbox");
-    const lightboxVideo = document.getElementById("lightboxVideo");
+        const lightbox = document.getElementById("videoLightbox");
+        const lightboxVideo = document.getElementById("lightboxVideo");
 
-    lightbox.style.display = "flex";
-    lightboxVideo.src = videoElement.currentSrc;
-    lightboxVideo.setAttribute("controls", ""); // tampilkan kontrol hanya di lightbox
-    lightboxVideo.play();
-}
+        lightbox.style.display = "flex";
+        lightboxVideo.src = videoElement.currentSrc;
+        lightboxVideo.setAttribute("controls", ""); // tampilkan kontrol hanya di lightbox
+        lightboxVideo.play();
+    }
 
-function closeVideoLightbox() {
-    const lightbox = document.getElementById("videoLightbox");
-    const lightboxVideo = document.getElementById("lightboxVideo");
+    function closeVideoLightbox() {
+        const lightbox = document.getElementById("videoLightbox");
+        const lightboxVideo = document.getElementById("lightboxVideo");
 
-    lightbox.style.display = "none";
-    lightboxVideo.pause();
-    lightboxVideo.removeAttribute("controls"); // sembunyikan kontrol saat ditutup
-    lightboxVideo.src = "";
-}
-
+        lightbox.style.display = "none";
+        lightboxVideo.pause();
+        lightboxVideo.removeAttribute("controls"); // sembunyikan kontrol saat ditutup
+        lightboxVideo.src = "";
+    }
 </script>
