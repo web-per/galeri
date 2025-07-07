@@ -78,8 +78,10 @@ header p {
 
 .gallery-item img {
     width: 100%;
-    height: 200px; /* tinggi tetap */
-    object-fit: cover; /* potong gambar agar proporsional dan tidak melebar */
+    height: 200px;
+    /* tinggi tetap */
+    object-fit: cover;
+    /* potong gambar agar proporsional dan tidak melebar */
     display: block;
     transition: transform 0.3s ease;
 }
@@ -138,5 +140,10 @@ footer {
         grid-template-columns: repeat(3, 1fr);
         gap: 0.5rem;
         padding: 1rem;
+    }
+
+    .gallery-item img {
+        height: 100px;
+        /* tinggi tetap */
     }
 }
