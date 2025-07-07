@@ -72,15 +72,54 @@ header p {
 }
 
 .video-item {
-    flex: 1 1 300px;
-    max-width: 400px;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* persegi */
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .video-item video {
     width: 100%;
+    height: 100%;
+    object-fit: cover; /* potong agar pas kotak */
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
 }
+
+.video-item:hover video {
+    transform: scale(1.05);
+}
+
+.video-lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.video-lightbox video {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.video-lightbox .close {
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+}
+
 
 
 footer {

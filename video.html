@@ -24,21 +24,26 @@
 
     <section class="video-section">
         <div class="video-item">
-            <video src="video/1.mp4" controls></video>
+            <video src="video/1.mp4" onclick="openLightboxVideo(this)" controls></video>
         </div>
         <div class="video-item">
-            <video src="video/2.mp4" controls></video>
+            <video src="video/2.mp4" onclick="openLightboxVideo(this)" controls></video>
         </div>
         <div class="video-item">
-            <video src="video/3.mp4" controls></video>
+            <video src="video/3.mp4" onclick="openLightboxVideo(this)" controls></video>
         </div>
         <div class="video-item">
-            <video src="video/4.mp4" controls></video>
+            <video src="video/4.mp4" onclick="openLightboxVideo(this)" controls></video>
         </div>
         <div class="video-item">
-            <video src="video/5.mp4" controls></video>
+            <video src="video/5.mp4" onclick="openLightboxVideo(this)" controls></video>
         </div>
     </section>
+
+    <div class="video-lightbox" id="videoLightbox" onclick="closeVideoLightbox()">
+    <span class="close">&times;</span>
+    <video id="lightboxVideo" controls autoplay></video>
+</div>
 
     <footer>
         <p>&copy; 2025 Galeri Foto - Irfan Nugraha</p>
@@ -46,3 +51,22 @@
 </body>
 
 </html>
+
+<script>
+    function openLightboxVideo(videoElement) {
+        const lightbox = document.getElementById("videoLightbox");
+        const lightboxVideo = document.getElementById("lightboxVideo");
+
+        lightbox.style.display = "flex";
+        lightboxVideo.src = videoElement.currentSrc;
+    }
+
+    function closeVideoLightbox() {
+        const lightbox = document.getElementById("videoLightbox");
+        const lightboxVideo = document.getElementById("lightboxVideo");
+
+        lightbox.style.display = "none";
+        lightboxVideo.pause();
+        lightboxVideo.src = "";
+    }
+</script>
