@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Galeri Foto</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <header>
+        <h1>Galeri Foto</h1>
+        <p>Kumpulan foto kenangan terbaik</p>
+    </header>
+
+    <section class="gallery">
+        <div class="gallery-item"><img src="img/1.jpg" alt="Foto 1"
+                onclick="openLightbox(this)"></div>
+        <div class="gallery-item"><img src="img/2.jpg" alt="Foto 2"
+                onclick="openLightbox(this)"></div>
+        <div class="gallery-item"><img src="img/3.jpg" alt="Foto 3"
+                onclick="openLightbox(this)"></div>
+        <div class="gallery-item"><img src="img/4.jpg" alt="Foto 4"
+                onclick="openLightbox(this)"></div>
+        <div class="gallery-item"><img src="img/5.jpg" alt="Foto 5"
+                onclick="openLightbox(this)"></div>
+        <div class="gallery-item"><img src="img/6.jpg" alt="Foto 6"
+                onclick="openLightbox(this)"></div>
+    </section>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="close">&times;</span>
+        <img id="lightbox-img" src="" alt="preview">
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Galeri Foto - Irfan Nugraha</p>
+    </footer>
+
+    <script>
+        function openLightbox(imgElement) {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+            lightbox.style.display = "flex";
+            lightboxImg.src = imgElement.src;
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
