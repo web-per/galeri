@@ -24,19 +24,19 @@
 
     <section class="video-section">
         <div class="video-item">
-            <video src="video/1.mp4" onclick="openLightboxVideo(this)" controls></video>
+            <video src="video/1.mp4" onclick="openLightboxVideo(this)"></video>
         </div>
         <div class="video-item">
-            <video src="video/2.mp4" onclick="openLightboxVideo(this)" controls></video>
+            <video src="video/2.mp4" onclick="openLightboxVideo(this)"></video>
         </div>
         <div class="video-item">
-            <video src="video/3.mp4" onclick="openLightboxVideo(this)" controls></video>
+            <video src="video/3.mp4" onclick="openLightboxVideo(this)"></video>
         </div>
         <div class="video-item">
-            <video src="video/4.mp4" onclick="openLightboxVideo(this)" controls></video>
+            <video src="video/4.mp4" onclick="openLightboxVideo(this)"></video>
         </div>
         <div class="video-item">
-            <video src="video/5.mp4" onclick="openLightboxVideo(this)" controls></video>
+            <video src="video/5.mp4" onclick="openLightboxVideo(this)"></video>
         </div>
     </section>
 
@@ -54,19 +54,23 @@
 
 <script>
     function openLightboxVideo(videoElement) {
-        const lightbox = document.getElementById("videoLightbox");
-        const lightboxVideo = document.getElementById("lightboxVideo");
+    const lightbox = document.getElementById("videoLightbox");
+    const lightboxVideo = document.getElementById("lightboxVideo");
 
-        lightbox.style.display = "flex";
-        lightboxVideo.src = videoElement.currentSrc;
-    }
+    lightbox.style.display = "flex";
+    lightboxVideo.src = videoElement.currentSrc;
+    lightboxVideo.setAttribute("controls", ""); // tampilkan kontrol hanya di lightbox
+    lightboxVideo.play();
+}
 
-    function closeVideoLightbox() {
-        const lightbox = document.getElementById("videoLightbox");
-        const lightboxVideo = document.getElementById("lightboxVideo");
+function closeVideoLightbox() {
+    const lightbox = document.getElementById("videoLightbox");
+    const lightboxVideo = document.getElementById("lightboxVideo");
 
-        lightbox.style.display = "none";
-        lightboxVideo.pause();
-        lightboxVideo.src = "";
-    }
+    lightbox.style.display = "none";
+    lightboxVideo.pause();
+    lightboxVideo.removeAttribute("controls"); // sembunyikan kontrol saat ditutup
+    lightboxVideo.src = "";
+}
+
 </script>
